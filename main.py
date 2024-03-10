@@ -26,11 +26,10 @@ QUERY=("""SELECT * FROM `mod-4-412623.jolene_dataset.predictions` LIMIT 10""")
 def hello_world():
     """Example Hello World route."""
     rows = client.query_and_wait(QUERY)
-    # rows = query_job.result()
 
     for row in rows:
         print(row[0])
-    return print("this isn't working") 
+    return print("this isn't working!!") 
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
